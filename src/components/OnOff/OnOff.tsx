@@ -1,60 +1,46 @@
-import React from "react";
-
-type  OnOffPropsType = {
-    status: boolean
-}
-
-type ButtonTitleType = {
-    title?: string
-    backgroundColor: "green" | "red" | ""
-}
+import React, {useState} from "react";
 
 
-const Rectangle = (props: ButtonTitleType) => {
-    return (
-        <div style={{
-            width: "50px",
-            height: "20px",
-            borderStyle: "solid",
-            borderWidth: "2px",
-            textAlign: "center",
-            backgroundColor: props.backgroundColor,
-        }}>{props.title}
-        </div>
-    )
-}
-const Circle = (props: ButtonTitleType) => {
-    return (
-        <div style={{
-            width: "20px",
-            height: "20px",
-            borderRadius: "50%",
-            borderStyle: "solid",
-            borderWidth: "2px",
-            marginLeft: "20px",
-            backgroundColor: props.backgroundColor,
-        }}>
-        </div>
-    )
-}
+export function OnOff() {
 
-export function OnOff(props: OnOffPropsType) {
-    if (props.status) {
-        return (
-            <div style={{display: "flex", alignItems: "center"}}>
-                <Rectangle title={"ON"} backgroundColor={"green"}/>
-                <Rectangle title={"OFF"} backgroundColor={""}/>
-                <Circle backgroundColor={"green"}/>
-            </div>
-        )
-    } else {
-        return (
-            <div style={{display: "flex", alignItems: "center"}}>
-                <Rectangle title={"ON"} backgroundColor={""}/>
-                <Rectangle title={"OFF"} backgroundColor={"red"}/>
-                <Circle backgroundColor={"red"}/>
-            </div>
+    const [statusOn, setStatusOn] = useState(false)
 
-        )
+    const onStyle = {
+        width: "30px",
+        height: "20px",
+        borderRadius: "2px",
+        border: "1px solid black",
+        display: "inline-block",
+        marginLeft: "5px",
+        padding: "2px",
+        backgroundColor: statusOn ? "green" : "white"
     }
+    const offStyle = {
+        width: "30px",
+        height: "20px",
+        borderRadius: "2px",
+        border: "1px solid black",
+        display: "inline-block",
+        marginLeft: "5px",
+        padding: "2px",
+        backgroundColor: !statusOn ? "red" : "white"
+    }
+    const indicatorStyle = {
+        width: "10px",
+        height: "10px",
+        borderRadius: "8px",
+        border: "1px solid black",
+        display: "inline-block",
+        marginLeft: "5px",
+        padding: "2px",
+        backgroundColor: statusOn ? "green" : "red"
+    }
+    return (
+        <div>
+            <div style={onStyle} onClick={() => {setStatusOn(true)}}>On</div>
+            <div style={offStyle} onClick={() => {setStatusOn(false)}}>Off</div>
+            <div style={indicatorStyle}></div>
+        </div>
+
+    )
 }
