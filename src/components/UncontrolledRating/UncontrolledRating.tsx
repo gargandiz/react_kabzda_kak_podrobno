@@ -27,9 +27,9 @@ type StarPropsType = {
 }
 
 function Star(props: StarPropsType) {
-    if (props.selected === true) {
-        return <span onClick={() => props.changeStars(props.id)}> <b>*</b> </span>
-    } else {
-        return <span  onClick={() => props.changeStars(props.id)}> * </span>
-    }
+    return (
+        <span onClick={() => props.changeStars(props.id)}>
+            {props.selected ? <b> * </b> : " * "}
+        </span>
+    )
 }
