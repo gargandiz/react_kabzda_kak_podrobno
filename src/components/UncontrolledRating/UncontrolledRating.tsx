@@ -2,19 +2,19 @@ import React, {useState} from "react";
 
 export function UncontrolledRating() {
 
-    const [Stars, setStars] = useState(0);
+    const [stars, setStars] = useState(0);
 
-    let changeStars = (starID: number) => {
-        setStars(starID)
-    }
+    // let changeStars = (starID: number) => {
+    //     setStars(starID)
+    // }
 
     return (
         <div>
-            <Star selected={Stars >= 1} id={1} changeStars={changeStars}/>
-            <Star selected={Stars >= 2} id={2} changeStars={changeStars}/>
-            <Star selected={Stars >= 3} id={3} changeStars={changeStars}/>
-            <Star selected={Stars >= 4} id={4} changeStars={changeStars}/>
-            <Star selected={Stars >= 5} id={5} changeStars={changeStars}/>
+            <Star selected={stars >= 1} value={1} changeStars={() => {setStars(1)}}/>
+            <Star selected={stars >= 2} value={2} changeStars={() => {setStars(2)}}/>
+            <Star selected={stars >= 3} value={3} changeStars={() => {setStars(3)}}/>
+            <Star selected={stars >= 4} value={4} changeStars={() => {setStars(4)}}/>
+            <Star selected={stars >= 5} value={5} changeStars={() => {setStars(5)}}/>
         </div>
     )
 }
@@ -22,13 +22,13 @@ export function UncontrolledRating() {
 type StarPropsType = {
     //type of props of type
     selected: boolean
-    id: number
-    changeStars: (id: number) => void
+    value: number
+    changeStars: (value: number) => void
 }
 
 function Star(props: StarPropsType) {
     return (
-        <span onClick={() => props.changeStars(props.id)}>
+        <span onClick={() => props.changeStars(props.value)}>
             {props.selected ? <b> * </b> : " * "}
         </span>
     )
