@@ -7,7 +7,8 @@ import {AccordionPropsType, UncontrolledAccordion} from "./components/Uncontroll
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import {UncontrolledAccordion2} from "./components/UncontrolledAccordion/UncontrolledAccordion2";
 import {UncontrolledRating2} from "./components/UncontrolledRating/UncontrolledRating2";
-import {OnOff, OnOffStatusType} from "./components/OnOff/OnOff-contr";
+import {OnOff, OnOffStatusType} from "./components/OnOff/ControlOnOff";
+import {UncontrolOnOff} from "./components/OnOff/UncontrolOnOff";
 
 
 //function declaration
@@ -34,7 +35,8 @@ let [statusOn, setStatusOn] = useState<OnOffStatusType>(false);
             {/*<Rating value={4}/>*/}
             {/*<Rating value={5}/>*/}
 
-            <OnOff status={statusOn} onClick={setStatusOn}/>
+            {/*<OnOff status={statusOn} onClick={setStatusOn}/>*/}
+            <UncontrolOnOff onChange={setStatusOn}/> {statusOn.toString()}
             {/*<OnOff />*/}
         </div>
     );
