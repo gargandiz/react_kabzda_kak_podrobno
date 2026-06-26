@@ -1,9 +1,16 @@
 import React, {useState} from "react";
 
+type RatingValueType =  0 | 1 | 2 | 3 | 4 | 5;
 
-export function UncontrolledRating2() {
+type RatingPropsType = {
+    defaultValue?: RatingValueType
+}
 
-    const [value, setValue] = useState(0);
+
+
+export function UncontrolledRating2(props: RatingPropsType) {
+
+    const [value, setValue] = useState<RatingValueType>(props.defaultValue ? props.defaultValue : 0);
 
     let changeValue = (starId: number) => {
         setValue(starId)
