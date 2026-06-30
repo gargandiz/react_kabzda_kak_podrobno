@@ -12,7 +12,7 @@ export function UncontrolledRating2(props: RatingPropsType) {
 
     const [value, setValue] = useState<RatingValueType>(props.defaultValue ? props.defaultValue : 0);
 
-    let changeValue = (starId: number) => {
+    let changeValue = (starId: RatingValueType) => {
         setValue(starId)
     }
 
@@ -31,7 +31,7 @@ type StarPropsType = {
     //type of props of type
     selected: boolean
     id: 1 | 2 | 3 | 4 | 5
-    changeValue: (id: number) => void
+    changeValue: (id: RatingValueType) => void
 }
 
 function Star(props: StarPropsType) {
