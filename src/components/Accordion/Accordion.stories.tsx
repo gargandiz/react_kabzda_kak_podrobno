@@ -23,24 +23,31 @@ export default {
 //     }
 // }
 
-const onChangeHandler = action('on Change');
+// const onChangeHandler = action('on Change');
+//
+//
+// export const CollapsedAccordion = () => {
+//     return <Accordion
+//         titleValue={"CollapsedAccordion"}
+//         collapsed={true}
+//         onClick={onChangeHandler}
+//     />
+// };
+//
+// export const OpenedAccordion = () => {
+//     return <Accordion
+//         titleValue={"Accordion"}
+//         collapsed={false}
+//         onClick={() => {}}
+//     />
+// };
 
 
-export const CollapsedAccordion = () => {
-    return <Accordion
-        titleValue={"CollapsedAccordion"}
-        collapsed={true}
-        onClick={onChangeHandler}
-    />
-};
+const callback = action("accordion mode change event fired");
+const onClickCallback = action("accordion mode change event fired");
 
-export const OpenedAccordion = () => {
-    return <Accordion
-        titleValue={"Accordion"}
-        collapsed={false}
-        onClick={() => {}}
-    />
-};
+export const MenuCollapsed = () => <Accordion titleValue={"Menu"} collapsed={true} onClick={callback} />
+export const MenuUncollapsed = () => <Accordion titleValue={"Users"} collapsed={false} onClick={callback} />
 
 export const NewAccordion = () => {
 

@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Accordion, AccordionCollapsedType} from "./components/Accordion/Accordion1";
+// import {Accordion, AccordionCollapsedType} from "./components/Accordion/Accordion1";
+// import {Accordion, AccordionCollapsedType} from "./components/Accordion/Accordion1";
+import {Accordion} from "./components/Accordion/Accordion2";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 // import {OnOff} from "./components/OnOff/OnOff";
 import {AccordionPropsType, UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
@@ -15,7 +17,7 @@ import {UncontrolOnOff} from "./components/OnOff/UncontrolOnOff";
 function App() {
 
 let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
-let [accordionCollapsed, setAccordionCollapsed] = useState<AccordionCollapsedType>(false);
+// let [accordionCollapsed, setAccordionCollapsed] = useState<AccordionCollapsedType>(false);
 let [statusOn, setStatusOn] = useState<OnOffStatusType>(false);
 
     return (
@@ -24,7 +26,8 @@ let [statusOn, setStatusOn] = useState<OnOffStatusType>(false);
             {/*<UncontrolledAccordion titleValue={"title_1"} />*/}
             {/*<UncontrolledAccordion2 titleValue={"title_2"} />*/}
             {/*<Accordion titleValue={"title_1"} collapsed={true}/>*/}
-            <Accordion titleValue={"title_1"} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
+            {/*<Accordion titleValue={"title_1"} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>*/}
+            <Accordion titleValue={"title 1"} collapsed={true} onChange={() => {}} onClick={() => {}} items={[]}/>
             {/*<Accordion titleValue={"title_2"} collapsed={false}/>*/}
             <UncontrolledRating/>
             {/*<UncontrolledRating2/>*/}
