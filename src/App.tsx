@@ -7,7 +7,7 @@ import {Rating, RatingValueType} from "./components/Rating/Rating";
 // import {OnOff} from "./components/OnOff/OnOff";
 import {AccordionPropsType, UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
-import {UncontrolledAccordion2} from "./components/UncontrolledAccordion/UncontrolledAccordion2";
+import {UncontrolledAccordionForReducer} from "./components/UncontrolledAccordion/UncontrolledAccordionForReducer";
 import {UncontrolledRating2} from "./components/UncontrolledRating/UncontrolledRating2";
 import {OnOff, OnOffStatusType} from "./components/OnOff/ControlOnOff";
 import {UncontrolOnOff} from "./components/OnOff/UncontrolOnOff";
@@ -24,7 +24,7 @@ let [statusOn, setStatusOn] = useState<OnOffStatusType>(false);
         <div>
             {/*<PageTitle  title={"This is APP component"}/>*/}
             {/*<UncontrolledAccordion titleValue={"title_1"} />*/}
-            {/*<UncontrolledAccordion2 titleValue={"title_2"} />*/}
+            {/*<UncontrolledAccordionForReducer titleValue={"title_2"} />*/}
             {/*<Accordion titleValue={"title_1"} collapsed={true}/>*/}
             {/*<Accordion titleValue={"title_1"} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>*/}
             <Accordion titleValue={"title 1"} collapsed={true} onChange={() => {}} onClick={() => {}} items={[]}/>
